@@ -50,6 +50,14 @@ void bubbleSortbyName(Students s[], int N)
  for(i=0;i<N-1; i++)
       for(j=0;j < N-i-1; j++)
     {
+	 
+	     // recommend to use string member functions
+	      // strcmp(str1, str2);
+	      // returns 0 if they are same, returns < 0 if str1 < str2, return >0 if str1 < str2
+	      
+	      
+	      
+	      
       int x=0;
       if (s[j].name[x] > s[j+1].name[x]) //check first character
       swap(s[j], s[j+1]);
