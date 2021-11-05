@@ -1,5 +1,4 @@
 #include "Numbers.hpp"
-#include <ctime>
 
 
 
@@ -11,7 +10,6 @@ Numbers::Numbers()
 Numbers::Numbers(int id,int size)
 {
   ID = id;
-  srand(time(0));
   for(int i=0;i<size;i++){
   int num = rand() % 100 + 1;
   numbers.push_back(num);
@@ -69,7 +67,7 @@ void Numbers::deleteElm(int n)
 {
 for(int i=0;i<getSize(); i++){
 if(getElm(i) == n)
-numbers.erase(numbers.begin() + i)
+numbers.erase(numbers.begin() + i);
 }
 }
 
