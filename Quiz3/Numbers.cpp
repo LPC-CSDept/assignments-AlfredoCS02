@@ -65,17 +65,23 @@ int Numbers::getSum() const
  return sum;
 }
 
-void Numbers::deleteElm(int)
+void Numbers::deleteElm(int n)
 {
-
+for(int i=0;i<getSize(); i++){
+if(getElm(i) == n)
+numbers.erase(numbers.begin() + i)
+}
 }
 
-void Numbers::addElm(int)
+void Numbers::addElm(int n)
 {
-
+numbers.push_back(n);
 }
 
 void Numbers::printAll() const
 {
-
+ for(int i=0;i<numbers.size();i++)
+ {
+ cout<<numbers[i]<<endl;
+ }
 }
