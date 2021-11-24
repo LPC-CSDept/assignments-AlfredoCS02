@@ -1,7 +1,7 @@
 #ifndef COURSE_H
 #define COURSE_H
 
-#include "student.hpp"
+#include "Student.hpp"
 
 class Course
 {
@@ -32,4 +32,5 @@ friend istream &operator >> (istream &, const Course &);
 
 
 #endif
+
 
