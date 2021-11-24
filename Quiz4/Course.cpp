@@ -56,6 +56,7 @@ for(int i = 0;i<students;i++){
         s.setStudent(id, name, grade, score);
         course.addStudent(s);
     }
+    course.setCourse(cname, credits, semester, course.getStudents());
     return is;
 }
 
