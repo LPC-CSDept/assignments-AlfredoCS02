@@ -10,7 +10,7 @@ string cname;
 int credits;
 string semester;
 vector<Student> student;
-static int NUM_COURSES = 0;
+static int NUM_COURSES;
 
 public:
 Course();
@@ -22,15 +22,14 @@ string getSemester();
 vector<Student> getStudents();
 void setCourse(string,int,string,vector<Student>);
 void addStudent(Student &s);
-int getNumCourses();
 
-friend ostream &operator << (ostream &, const Course &);
-friend istream &operator >> (istream &, const Course &);
+static int getNumCourses();
+friend ostream &operator << 
+(ostream &, Course &);
+friend istream &operator >> (istream &, Course &);
 
 
 };
 
 
 #endif
-
-

@@ -1,13 +1,17 @@
 #include "Course.hpp"
+#include <fstream>
+
+int Course::NUM_COURSES=0;
 
 Course::Course(){
-
+NUM_COURSES++;
 }
 Course::Course(string n,int c,string s,vector<Student> st){
 cname = n;
 credits = c;
 semester = s;
 student = st;
+NUM_COURSES++;
 }
 
 void Course::setCourse(string n,int c,string s,vector<Student> st){
@@ -30,16 +34,43 @@ vector<Student> Course::getStudents(){
 return student;
 }
 
-void addStudent(Student &s){
-
+void Course::addStudent(Student &s){
+student.push_back(s);
 }
-int getNumCourses(){
-
+int Course::getNumCourses(){
+return NUM_COURSES;
 }
 
-ostream &operator<<(ostream &os, const Course &course){
 
+
+istream &operator>>(istream &is, Course &course){
+string cname, semester; 
+int credits;
+is >>cname >> credits >>semester;
+int id,students; double score; string name;
+char grade;
+Student s;
+is>>students;
+for(int i = 0;i<students;i++){
+        is >> id >> name  >> grade >> score;
+        s.setStudent(id, name, grade, score);
+        course.addStudent(s);
+    }
+    return is;
 }
-istream &operator>>(istream &is, const Course &course){
 
+
+
+ostream &operator<<(ostream &os, Course& course){
+os<<course.getCName()<<" | "<<course.getCredit()<<" | "<<course.getSemester()<<endl;
+vector<Student> s = course.getStudents();
+os<<"Student ID\tName\tGrade\tScore"<<endl;
+for(int i=0;i<s.size();i++){
+  os<<s[i].getID()<<"\t\t";
+  os<<s[i].getSName()<<"\t\t";
+  os<<s[i].getGrade()<<"\t\t";
+  os<<s[i].getScores()<<endl;
+  }
+
+return os;
 }
