@@ -11,7 +11,7 @@ int main(){
  file.open("coursestudents.txt");
  
 
- for(int i=0; i<4; i++){
+ for(int i=0; i<Course::getNumCourses(); i++){
  file>>course[i];
  cout<<course[i]<<endl;
 }
@@ -26,7 +26,7 @@ char grade;
 
 while(sfile>>courseName>>n){
 
-for(int i=0; i<4; i++){
+for(int i=0; i<Course::getNumCourses(); i++){
 if(course[i].getCName()==courseName)
 courseID = i;
 }
@@ -37,10 +37,16 @@ for(int i=0; i<n; i++)
  s.setStudent(id,name,grade,score);
  course[courseID].addStudent(s);
  }
-
-cout<<"Updated Students list for the Course "<<courseName<<endl;
-
+cout<<"\n\n========================================";
+cout<<"\nUpdated Students list for the Course "<<courseName<<endl;
+cout<<"========================================\n\n";
 cout<<course[courseID]<<endl;
 }
+cout<<"\n\n========================================";
+cout<<"\nPrinting final list (updated)...\n";
+cout<<"========================================\n\n";
 
+ for(int i=0; i<Course::getNumCourses(); i++){
+ cout<<course[i]<<endl;
+}
 }
