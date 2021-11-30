@@ -25,5 +25,7 @@ cout<<"\n (n1>n2) =  ";
   else 
   cout<<"false"<<endl;
 
+cout<<"Number of Objects created: "<<Numbers::getNumObjects();
+
 return 0;
 }

@@ -23,9 +23,9 @@ int getScore1();
 int getScore2();
 int getScore3();
 int getTotalScore();
-Students findStudentID(int);
 
 void friend printStudent(Students& s);
+
 
 
 };
