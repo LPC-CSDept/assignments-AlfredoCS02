@@ -20,9 +20,9 @@ class Numbers{
   int getID();
   void setID(int);
   static int getNumObjects();
-  friend printNumbers(Numbers);
+  friend void printNumbers(Numbers);
   int operator>(const Numbers &);
 
-}
+};
 
 #endif

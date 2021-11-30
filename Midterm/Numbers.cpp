@@ -1,7 +1,5 @@
 #include "Numbers.hpp"
 
-#include<ctime>
-
 int Numbers::NumofObjects=0;
 
 Numbers::Numbers(){
@@ -11,8 +9,7 @@ Numbers::Numbers(){
 
 Numbers::Numbers(int id, int n){
   ID = id;
-
-  srand(time(0));
+  
   for(int i=0; i<n; i++){
     values.push_back(rand()%100);
   }
