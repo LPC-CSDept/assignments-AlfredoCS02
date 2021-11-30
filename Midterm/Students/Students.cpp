@@ -40,3 +40,12 @@ int Students::getTotalScore(){
   int total = scores[0]+scores[1]+scores[2];
   return total;
 }
+
+void Students::printStudent(){
+cout<<"Name: "<<name<<endl;
+cout<<"ID: "<<ID<<endl;
+cout<<"Score1: "<<scores[0]<<endl;
+cout<<"Score2: "<<scores[1]<<endl;
+cout<<"Score3: "<<scores[2]<<endl;
+cout<<"Total: "<<getTotalScore()<<endl;
+}

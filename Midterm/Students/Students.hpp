@@ -1,14 +1,17 @@
-#ifndef NUMBERS_H
-#define NUMBERS_H
+#ifndef STUDENTS_H
+#define STUDENTS_H
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <fstream>
 
 using namespace std;
 
 class Students{
 
 private:
+
 int ID;
 string name;
 int scores[3];
@@ -24,7 +27,7 @@ int getScore2();
 int getScore3();
 int getTotalScore();
 
-void friend printStudent(Students& s);
+void printStudent();
 
 
 
