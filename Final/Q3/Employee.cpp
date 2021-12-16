@@ -32,6 +32,10 @@ int Date::getYear(){
   return year;
 }
 
+void printDate(Date d){
+  cout<<"Hire Date: " <<d.getMonth()<< "/" <<d.getDay()<< "/" <<d.getYear()<<endl;
+}
+
 //Employee
 
 Employee::Employee(){

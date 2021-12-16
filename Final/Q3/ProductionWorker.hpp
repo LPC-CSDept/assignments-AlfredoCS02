@@ -13,9 +13,11 @@ public:
 ProductionWorker();
 ProductionWorker(string,int,Date,int,double);
 void setWorker(string,int,Date,int,double);
-
 int getShift();
 double getPayrate();
+
+void operator>(ProductionWorker);
+void friend highestPayrate(ProductionWorker [],int);
 
 };
 

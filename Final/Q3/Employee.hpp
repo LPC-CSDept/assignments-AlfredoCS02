@@ -19,6 +19,7 @@ class Date{
   int getDay();
   int getMonth();
   int getYear();
+  friend void printDate(Date);
 };
 
 class Employee{
