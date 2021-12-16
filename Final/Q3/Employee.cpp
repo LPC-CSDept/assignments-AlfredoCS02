@@ -1,5 +1,7 @@
 #include "Employee.hpp"
 
+//Date
+
 Date::Date(){
   month = 1;
   day = 1;
@@ -30,8 +32,34 @@ int Date::getYear(){
   return year;
 }
 
+//Employee
+
 Employee::Employee(){
 ID = 00000;
 name = "";
 Date();
+}
+
+Employee::Employee(string n,int id,Date d){
+ ID = id;
+ name = n;
+ date.setDate(d.getMonth(),d.getDay(),d.getYear()); 
+}
+
+void Employee::setEmployee(string n,int id,Date d){
+ ID = id;
+ name = n;
+ date.setDate(d.getMonth(),d.getDay(),d.getYear()); 
+}
+
+string Employee::getName(){
+  return name;
+}
+
+int Employee::getID(){
+  return ID;
+}
+
+Date Employee::getDate(){
+  return date;
 }
