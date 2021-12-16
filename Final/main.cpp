@@ -4,6 +4,7 @@
 void printCourses(Course [],int);
 void sortbyID(Course [], int);
 int binarySearch(Course[],int,int);
+int recursive_binarySearch(Course [],int,int,int,int);
 
 int const N = 10;
 
@@ -34,7 +35,9 @@ cout<<"Enter a Course ID to search: ";
 cin>>target;
 
 //binarySearch
-target = binarySearch(c,N,target);
+
+//target = binarySearch(c,N,target);
+target = recursive_binarySearch(c,N,target,0,N-1);
 
 if(target==-1)
 cout<<"Course not found.."<<endl;
@@ -88,3 +91,21 @@ if (c[mid].getID() == target)
 }
 return -1;
 }
+
+
+int recursive_binarySearch(Course c[],int N,int target, int first,int last){
+if(first>last){
+  return -1;
+}
+int mid = (first + last) / 2;
+if(target == c[mid].getID()){
+  return mid;
+}
+else if(target < c[mid].getID()){
+  return recursive_binarySearch(c,N,target,first,mid-1);
+}
+else{
+  return recursive_binarySearch(c,N,target,mid+1,last);
+}
+}
+
